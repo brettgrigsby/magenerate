@@ -5,3 +5,4 @@ export type EdgeCombinator = (x: TransformFunc, y: TransformFunc) => TransformFu
 export const simpleCompose: EdgeCombinator = (f1, f2) => (wo) => f2(f1(wo))
 export const swapOrder: EdgeCombinator = (f1, f2) => (wo) => f1(f2(wo))
 export const applyTwice: EdgeCombinator = (f1, f2) => (wo) => f2(f2(f1(wo)))
+export const doNotApply: EdgeCombinator = (f1, _) => (wo) => f1(wo)
